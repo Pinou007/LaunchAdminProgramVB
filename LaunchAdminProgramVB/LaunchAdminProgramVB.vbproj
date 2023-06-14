@@ -6,7 +6,13 @@
     <StartupObject>Sub Main</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
+    <ApplicationIcon>2teste.ico</ApplicationIcon>
+    <Authors>$(Pinou007)</Authors>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="2teste.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <Import Include="System.Data" />
