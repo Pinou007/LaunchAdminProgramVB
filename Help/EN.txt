@@ -1,0 +1,30 @@
+To use this software, you need to enter the path to your program. If your program uses a path that is not the same everywhere, you can use the following code in your main application or launcher.
+
+At the very top of your code, you need to import the System.IO library using the following line of code:
+
+vb
+Imports System.IO
+```
+
+At the activator location, you can add the following code to specify the file path:
+
+```vb
+File path
+Dim filePath As String = Path.Combine(Application.StartupPath, "Config.pinou007")
+
+' New content
+Dim newContent As String = Application.StartupPath & "<APPLICATION NAME>"
+
+' Modify file content if it exists
+If File.Exists(filePath) Then
+    File.WriteAllText(filePath, newContent)
+End If
+```
+
+This code sets the file path using the Path.Combine function, which combines the path of the application startup directory (Application.StartupPath) with the file name ("Config.pinou007"). Next, the new file contents are defined by concatenating the application startup path with the application name. If the file exists, its contents are modified by writing the new contents.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  Please note that the program must be in the same file as your main program or launcher.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

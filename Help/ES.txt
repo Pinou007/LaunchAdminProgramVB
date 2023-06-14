@@ -1,0 +1,30 @@
+Para utilizar este software, debe introducir la ruta de su programa. Si su programa utiliza una ruta que no es la misma en todas partes, puede utilizar el siguiente código en su aplicación principal o lanzador.
+
+En la parte superior de tu código, necesitas importar la librería System.IO usando la siguiente línea de código:
+
+vb
+Importa System.IO
+```
+
+En la ubicación del activador, puedes añadir el siguiente código para especificar la ruta del archivo:
+
+```vb
+Ruta de archivo
+Dim filePath As String = Path.Combine(Application.StartupPath, "Config.pinou007")
+
+Nuevo contenido
+Dim newContent As String = Application.StartupPath & "<NombreDeLaAplicación>"
+
+' Modifica el contenido del archivo si existe
+If File.Exists(filePath) Then
+    File.WriteAllText(filePath, newContent)
+End If
+```
+
+Este código define la ruta del archivo utilizando la función Path.Combine, que combina la ruta del directorio de inicio de la aplicación (Application.StartupPath) con el nombre del archivo ("Config.pinou007"). El nuevo contenido del archivo se define concatenando la ruta de inicio de la aplicación con el nombre de la aplicación. Si el fichero existe, se modifica su contenido escribiendo el nuevo contenido.
+
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  Tenga en cuenta que el programa debe estar en el mismo archivo que su programa principal o lanzador.
+
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

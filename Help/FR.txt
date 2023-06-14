@@ -1,0 +1,30 @@
+Pour pouvoir utiliser ce logiciel, vous devez entrer le chemin de votre programme. Si votre programme utilise un chemin qui n'est pas le même partout, vous pouvez utiliser le code suivant dans votre application principale ou votre lanceur.
+
+Tout en haut de votre code, vous devez importer la bibliothèque System.IO en utilisant la ligne de code suivante:
+
+```vb
+Imports System.IO
+```
+
+À l'endroit de l'activateur, vous pouvez ajouter le code suivant pour spécifier le chemin du fichier:
+
+```vb
+' Chemin du fichier
+Dim filePath As String = Path.Combine(Application.StartupPath, "Config.pinou007")
+
+' Nouveau contenu
+Dim newContent As String = Application.StartupPath & " <NOM DE L'APPLICATION>"
+
+' Modifier le contenu du fichier s'il existe
+If File.Exists(filePath) Then
+    File.WriteAllText(filePath, newContent)
+End If
+```
+
+Ce code permet de définir le chemin du fichier en utilisant la fonction Path.Combine qui combine le chemin du répertoire de démarrage de l'application (Application.StartupPath) avec le nom du fichier ("Config.pinou007"). Ensuite, le nouveau contenu du fichier est défini en concaténant le chemin de démarrage de l'application avec le nom de l'application. Si le fichier existe, son contenu est modifié en écrivant le nouveau contenu.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  Attention le programe doit étre dans le méme fichée que votre programe principale ou lanceur
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
